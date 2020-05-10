@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7FC6E242-2A17-4CC9-BA81-BEA9DDE8EB21}</ProjectGuid>
+    <ProjectGuid>{FB01C2E1-26A1-46F4-A229-C193BEA4ED11}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MyConnectionFactory</RootNamespace>
-    <AssemblyName>MyConnectionFactory</AssemblyName>
+    <RootNamespace>AutoLotClient</RootNamespace>
+    <AssemblyName>AutoLotClient</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,7 +34,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoLotDal\AutoLotDal.csproj">
+      <Project>{e76e4a0b-152a-4b95-aea2-4b9dbbc69d4b}</Project>
+      <Name>AutoLotDal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
