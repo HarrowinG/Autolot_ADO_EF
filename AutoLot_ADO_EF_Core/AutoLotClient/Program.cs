@@ -13,7 +13,7 @@ namespace AutoLotClient
         {
             //DalTest();
             //MoveCustomer();
-            DoBulkCopy();
+            //DoBulkCopy();
         }
 
         public static void DalTest()
