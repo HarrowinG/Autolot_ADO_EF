@@ -5,6 +5,7 @@ using AutoLotDAL.Models;
 
 namespace AutoLotDAL.EF
 {
+    //Make sure you closed all connections from other apps, Management studio, Server explorer
     //DropCreateDatabaseIfModelChanges<AutoLotDbContext>
     public class MyDataInitializer : DropCreateDatabaseAlways<AutoLotDbContext>
     {
