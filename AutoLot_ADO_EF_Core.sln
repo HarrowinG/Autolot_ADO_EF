@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLotClient", "AutoLot_AD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLotEfConsoleApp", "AutoLot_ADO_EF_Core\AutoLotEfConsoleApp\AutoLotEfConsoleApp.csproj", "{D92800C1-43CB-4B2B-AAA2-AC085DF6C61C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF", "EF", "{DA3E5ADD-36AF-4AB5-B2B2-85FF773CA1DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLotDAL", "AutoLot_ADO_EF_Core\EF\AutoLotDAL\AutoLotDAL.csproj", "{CE6AC876-88E5-46C0-85E4-33C1755F224D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{D92800C1-43CB-4B2B-AAA2-AC085DF6C61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D92800C1-43CB-4B2B-AAA2-AC085DF6C61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D92800C1-43CB-4B2B-AAA2-AC085DF6C61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE6AC876-88E5-46C0-85E4-33C1755F224D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE6AC876-88E5-46C0-85E4-33C1755F224D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE6AC876-88E5-46C0-85E4-33C1755F224D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE6AC876-88E5-46C0-85E4-33C1755F224D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CE6AC876-88E5-46C0-85E4-33C1755F224D} = {DA3E5ADD-36AF-4AB5-B2B2-85FF773CA1DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B31268DF-B0C1-4FEC-BEDA-064AB633A4AC}
