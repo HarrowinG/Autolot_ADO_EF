@@ -16,6 +16,6 @@ namespace AutoLotDAL.Models
 
         public virtual Customer Customer { get; set; }
 
-        public virtual Inventory Car { get; set; }
+        public virtual Inventory Inventory { get; set; }
     }
 }
