@@ -1,3 +1,5 @@
+using AutoLotDAL.Models.Base;
+
 namespace AutoLotDAL.Models
 {
     using System;
@@ -6,11 +8,8 @@ namespace AutoLotDAL.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Customer
+    public partial class Customer : EntityBase
     {
-        [Key]
-        public int CustId { get; set; }
-
         [StringLength(50)]
         public string FirstName { get; set; }
 

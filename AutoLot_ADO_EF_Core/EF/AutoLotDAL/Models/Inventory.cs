@@ -1,3 +1,5 @@
+using AutoLotDAL.Models.Base;
+
 namespace AutoLotDAL.Models
 {
     using System;
@@ -6,12 +8,8 @@ namespace AutoLotDAL.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Inventory")]
-    public partial class Inventory
+    public partial class Inventory : EntityBase
     {
-        [Key]
-        public int CarId { get; set; }
-
         [StringLength(50)]
         public string Make { get; set; }
 

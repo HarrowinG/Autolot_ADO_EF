@@ -1,0 +1,7 @@
+EF always checking __MigrationHistory table when recreating context even if you dont use migrations
+If hashes of table and current EF model differen it throws exception
+when table missing exceptions will be thrown and catched by platform but it has some costs => Enable migrations even you dont use it
+
+1. enable-migrations on needed project
+2. add-migraton Initial
+3. update-database

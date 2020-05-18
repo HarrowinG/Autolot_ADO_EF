@@ -8,7 +8,7 @@ namespace AutoLotTestDrive
     {
         static void Main(string[] args)
         {
-            Database.SetInitializer(new MyDataInitializer()); //Deletes, recreates db and calls Seed
+            //Database.SetInitializer(new MyDataInitializer()); //Deletes, recreates db and calls Seed
             Console.WriteLine("*** Fun with EF Code First ***");
             using (var context = new AutoLotDbContext())
             {

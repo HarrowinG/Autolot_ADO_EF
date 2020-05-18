@@ -9,7 +9,7 @@ namespace AutoLotDAL.Models
 
         public override string ToString()
         {
-            return $"{PetName ?? "** No Name **"} is a {Color} {Make} with Id {CarId}.";
+            return $"{PetName ?? "** No Name **"} is a {Color} {Make} with Id {Id}.";
         }
     }
 }
