@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Entity.Infrastructure;
+using System.Linq;
 using AutoLotDAL.Models;
 using AutoLotDAL.Repos;
 
@@ -56,6 +58,33 @@ namespace AutoLotTestDrive
             using (var repo = new InventoryRepo())
             {
                 repo.Delete(carId, timeStamp);
+            }
+        }
+
+        private static void TestConcurrency()
+        {
+            var repo1 = new InventoryRepo();
+            var repo2 = new InventoryRepo();
+            var car1 = repo1.GetOne(1);
+            var car2 = repo1.GetOne(1);
+            car1.PetName = "NewName";
+            repo1.Save(car1);
+            car2.PetName = "OtherName";
+            try
+            {
+                repo2.Save(car2);
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                var entry = ex.Entries.Single();
+                var currentValues = entry.CurrentValues;
+                var originalValues = entry.OriginalValues;
+                var dbValues = entry.GetDatabaseValues();
+                Console.WriteLine("*** Concurrency ***");
+                Console.WriteLine("Type\tPetName");
+                Console.WriteLine($"Current:\t{currentValues[nameof(Inventory.PetName)]}");
+                Console.WriteLine($"Original:\t{originalValues[nameof(Inventory.PetName)]}");
+                Console.WriteLine($"Db:\t{dbValues[nameof(Inventory.PetName)]}");
             }
         }
     }
