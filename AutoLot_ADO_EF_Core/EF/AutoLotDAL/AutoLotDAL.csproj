@@ -62,12 +62,6 @@
       <DependentUpon>202005180711037_Final.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Base\EntityBase.cs" />
-    <Compile Include="Models\Inventory.cs" />
-    <Compile Include="Models\InventoryPartial.cs" />
-    <Compile Include="Models\CreditRisk.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BaseRepo.cs" />
     <Compile Include="Repos\InventoryRepo.cs" />
@@ -87,6 +81,12 @@
     <EmbeddedResource Include="Migrations\202005180711037_Final.resx">
       <DependentUpon>202005180711037_Final.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoLotDAL.Models\AutoLotDAL.Models.csproj">
+      <Project>{59e3e48e-3c00-459c-8c61-9e19adea7c72}</Project>
+      <Name>AutoLotDAL.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
