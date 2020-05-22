@@ -1,3 +1,5 @@
+using System.Data.Entity.Infrastructure.Interception;
+using AutoLotDAL.Interception;
 using AutoLotDAL.Models;
 
 namespace AutoLotDAL.EF
@@ -9,9 +11,14 @@ namespace AutoLotDAL.EF
 
     public partial class AutoLotDbContext : DbContext
     {
+        static readonly DatabaseLogger DatabseLogger = new DatabaseLogger("sqllog.txt", true);
+        static readonly ConsoleWriterInterceptor ConsoleWriterInterceptor = new ConsoleWriterInterceptor();
         public AutoLotDbContext()
             : base("name=AutoLotConnection")
         {
+            DbInterception.Add(ConsoleWriterInterceptor);
+            DatabseLogger.StartLogging();
+            DbInterception.Add(DatabseLogger);
         }
 
         public virtual DbSet<CreditRisk> CreditRisks { get; set; }
@@ -25,6 +32,14 @@ namespace AutoLotDAL.EF
                 .HasMany(e => e.Orders)
                 .WithRequired(e => e.Inventory)
                 .WillCascadeOnDelete(false);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            DbInterception.Remove(ConsoleWriterInterceptor);
+            DbInterception.Remove(DatabseLogger);
+            DatabseLogger.StopLogging();
+            base.Dispose(disposing);
         }
     }
 }

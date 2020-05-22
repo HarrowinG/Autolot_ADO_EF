@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="EF\AutoLotDbContext.cs" />
     <Compile Include="EF\MyDataInitializer.cs" />
+    <Compile Include="Interception\ConsoleWriterInterceptor.cs" />
     <Compile Include="Migrations\202005170919360_Initial.cs" />
     <Compile Include="Migrations\202005170919360_Initial.designer.cs">
       <DependentUpon>202005170919360_Initial.cs</DependentUpon>
