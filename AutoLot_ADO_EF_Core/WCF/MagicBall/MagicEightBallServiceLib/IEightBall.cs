@@ -2,7 +2,7 @@
 
 namespace MagicEightBallServiceLib
 {
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://MyCompany.com")]
     public interface IEightBall
     {
         [OperationContract]
