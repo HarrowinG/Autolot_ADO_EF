@@ -10,6 +10,12 @@ namespace MagicEightBallServiceHost
         //1. create endpoint in config
         //2. create ServiceHost in IIS created automatically
         //3. keep host running)
+
+        //MEX enabling
+        //1. need new endpoint for MEX
+        //2. need behaviour line for incoming HTTP GET requests
+        //3. need to link behaviour with service
+        //4. need <host> element in service that MEX can see
         static void Main(string[] args)
         {
             Console.WriteLine("***** Console Based WCF Host *****");
