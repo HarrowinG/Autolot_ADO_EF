@@ -16,14 +16,14 @@ namespace MathWindowsServiceHost
         protected override void OnStart(string[] args)
         {
             _myHost?.Close();
-//            _myHost = new ServiceHost(typeof(MathService));
+//            _myHost = new ServiceHost(typeof(MathServiceLibrary.MathService));
 //            var address = new Uri("http://localhost:8080/MathServiceLibrary");
 //            var binding = new WSHttpBinding();
 //            var contract = typeof(IBasicMath);
 //            _myHost.AddServiceEndpoint(contract, binding, address);
 
             var address = new Uri("http://localhost:8080/MathServiceLibrary");
-            _myHost = new ServiceHost(typeof(MathService), address);
+            _myHost = new ServiceHost(typeof(MathServiceLibrary.MathService), address);
             _myHost.AddDefaultEndpoints();
             _myHost.Open();
         }
